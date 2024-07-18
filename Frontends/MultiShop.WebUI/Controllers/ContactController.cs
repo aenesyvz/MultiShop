@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MultiShop.Catalog.Dtos.ContactDtos;
+using MultiShop.Catalog.Services.ContactServices;
 
 namespace MultiShop.WebUI.Controllers
 {
     public class ContactController : Controller
     {
-        //private readonly IContactService _contactService;
-        //public ContactController(IContactService contactService)
-        //{
-        //    _contactService = contactService;
-        //}
+        private readonly IContactService _contactService;
+        public ContactController(IContactService contactService)
+        {
+            _contactService = contactService;
+        }
 
         [HttpGet]
         public IActionResult Index()
@@ -19,13 +21,13 @@ namespace MultiShop.WebUI.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Index(CreateContactDto createContactDto)
-        //{
-        //    createContactDto.IsRead = false;
-        //    createContactDto.SendDate = DateTime.Now;
-        //    await _contactService.CreateContactAsync(createContactDto);
-        //    return RedirectToAction("Index", "Default");
-        //}
+        [HttpPost]
+        public async Task<IActionResult> Index(CreateContactDto createContactDto)
+        {
+            createContactDto.IsRead = false;
+            createContactDto.SendDate = DateTime.Now;
+            await _contactService.CreateContactAsync(createContactDto);
+            return RedirectToAction("Index", "Default");
+        }
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using MultiShop.Catalog.Dtos.ProductDtos;
 using MultiShop.Catalog.Services.CategoryService;
 using MultiShop.Catalog.Services.ProductService;
-//using MultiShop.DtoLayer.CatalogDtos.ProductDtos;
 using Newtonsoft.Json;
 
 namespace MultiShop.WebUI.Areas.Admin.Controllers

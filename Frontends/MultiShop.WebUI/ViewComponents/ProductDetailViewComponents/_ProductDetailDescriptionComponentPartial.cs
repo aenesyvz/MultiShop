@@ -3,10 +3,10 @@ using MultiShop.Catalog.Services.ProductDetailServices;
 
 namespace MultiShop.WebUI.ViewComponents.ProductDetailViewComponents;
 
-public class ProductDetailDescriptionComponentPartial : ViewComponent
+public class _ProductDetailDescriptionComponentPartial : ViewComponent
 {
     private readonly IProductDetailService _productDetailService;
-    public ProductDetailDescriptionComponentPartial(IProductDetailService productDetailService)
+    public _ProductDetailDescriptionComponentPartial(IProductDetailService productDetailService)
     {
         _productDetailService = productDetailService;
     }

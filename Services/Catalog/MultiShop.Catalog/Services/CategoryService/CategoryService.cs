@@ -34,7 +34,7 @@ public class CategoryService : ICategoryService
         return _mapper.Map<GetByIdCategoryDto>(values);
     }
 
-    public async Task<List<ResultCategoryDto>> GettAllCategoryAsync()
+    public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
     {
         var values = await _categoryCollection.Find(x => true).ToListAsync();
         return _mapper.Map<List<ResultCategoryDto>>(values);

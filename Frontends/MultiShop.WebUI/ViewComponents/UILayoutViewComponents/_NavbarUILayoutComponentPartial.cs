@@ -10,9 +10,9 @@ public class _NavbarUILayoutComponentPartial : ViewComponent
     {
         _categoryService = categoryService;
     }
-    //public async Task<IViewComponentResult> InvokeAsync()
-    //{
-    //    var values = await _categoryService.GetAllCategoryAsync();
-    //    return View(values);
-    //}
+    public async Task<IViewComponentResult> InvokeAsync()
+    {
+        var values = await _categoryService.GetAllCategoryAsync();
+        return View(values);
+    }
 }
